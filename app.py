@@ -1,8 +1,8 @@
-from flask import Flask
+﻿from flask import Flask, Response
 import tweepy
 import os, sys
 from random import randint
-from multiprocessing import Process, Value
+from threading import Thread
 import time
 
 
@@ -10,7 +10,9 @@ app = Flask(__name__)
 
 isActive = True
 
-def xingar(isActive):
+def xingar():
+    global isActive
+
     while isActive:
         consumer_key = ""
         consumer_secret = ""             # colocar os tokens etc
@@ -52,17 +54,19 @@ def xingar(isActive):
 
         time.sleep(2)
 
-@app.route("/start")
+def manual_run():
+    t = Thread(target=xingar)
+    t.start()
+    return "Xingando..."
+
+@app.route('/start', methods=['GET'])
 def start():
-    return 'started'
+    global isActive
+    isActive = True
+    return Response(manual_run(), mimetype="text/html")
 
-@app.route("/stop")
+@app.route('/stop')
 def stop():
-    return 'stopped'
-
-if __name__ == "__main__":
-    p = Process(target=xingar(isActive))
-    p.start()  
-    app.run(debug=True, use_reloader=False)
-    p.join()
-
+    global isActive
+    isActive = False
+    return 'Stopped'
