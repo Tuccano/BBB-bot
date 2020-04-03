@@ -33,14 +33,14 @@ def xingar():
         texto = "babu lindo s2"
         texto2 = ""
     else:
-        texto = f'vsf {pessoa[random_pessoa]}'
+        texto = f'vsf #{pessoa[random_pessoa]}'
         texto2 = f' sua {xingamento[random_xingamento]}'
 
     # print(random_pessoa)
     # print(random_xingamento)
-    # print(texto.strip('\n') + texto2)           # texto do post
+    print(texto.strip('\n') + texto2 + "#BBB20")           # texto do post
 
-    api.update_status(texto.strip('\n') + texto2)   # post final
+    # api.update_status(texto.strip('\n') + texto2)   # post final
 
 while True:
     xingar()
