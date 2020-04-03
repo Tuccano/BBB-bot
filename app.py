@@ -38,11 +38,11 @@ def xingar():
 
     # print(random_pessoa)
     # print(random_xingamento)
-    print(texto.strip('\n') + texto2)           # texto do post
+    # print(texto.strip('\n') + texto2)           # texto do post
 
-    # api.update_status(texto.strip('\n') + texto2)   # post final
+    api.update_status(texto.strip('\n') + texto2)   # post final
 
 while True:
     xingar()
     
-    time.sleep(2)
+    time.sleep(3600)
