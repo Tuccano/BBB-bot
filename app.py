@@ -38,9 +38,9 @@ def xingar():
 
     # print(random_pessoa)
     # print(random_xingamento)
-    print(texto.strip('\n') + texto2.strip('\n') + " #BBB20\n")           # texto do post
+    # print(texto.strip('\n') + texto2.strip('\n') + " #BBB20\n")           # texto do post
 
-    # api.update_status(texto.strip('\n') + texto2)   # post final
+    api.update_status(texto.strip('\n') + texto2)   # post final
 
 while True:
     xingar()
