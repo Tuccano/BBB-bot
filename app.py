@@ -20,27 +20,25 @@ def xingar():
     pessoa = pessoa_file.readlines()
     xingamento = xingamento_file.readlines()      # converte em lista
 
+    pessoa_file.close()
+    xingamento_file.close()
+
     pessoa_max = len(pessoa)
     xingamento_max = len(xingamento)              # define o número de itens das listas
 
     random_pessoa = randint(0, pessoa_max) - 1
     random_xingamento = randint(0, xingamento_max) - 1
 
-    texto = ""
-    texto2 = ""
-
     if random_pessoa == 0:
         texto = "Babu lindo s2"
         texto2 = ""
     else:
-        texto = f'vsf #{pessoa[random_pessoa]}'
-        texto2 = f' sua {xingamento[random_xingamento]}'
+        texto = f'vsf {pessoa[random_pessoa]}'.strip('\n')
+        texto2 = f' sua {xingamento[random_xingamento]}'.strip('\n')
 
-    # print(random_pessoa)
-    # print(random_xingamento)
-    # print(texto.strip('\n') + texto2.strip('\n') + " #BBB20\n")           # texto do post
+    # print(texto + texto2 + " #BBB20\n")           # texto do post
 
-    api.update_status(texto.strip('\n') + texto2.strip('\n') + ' #BBB20')   # post final
+    api.update_status(texto + texto2 + ' #BBB20')   # post final
 
 while True:
     xingar()
