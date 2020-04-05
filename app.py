@@ -4,10 +4,10 @@ from random import randint
 import time
 
 def xingar():
-    consumer_key = ""
-    consumer_secret = ""             # colocar os tokens etc
-    access_token = ""
-    access_token_secret = ""
+    consumer_key = "TLXPG47fXNoGCeErQc4dwpqiY"
+    consumer_secret = "GnGQzC62zmsh3vZPoEhyMWTe6LhCXVKRkPHPuITTyWFBR1WWJp"             # colocar os tokens etc
+    access_token = "1044965591562547200-131bSJ5ghM7TtGIWvo2Aw0xVduwLDA"
+    access_token_secret = "wqKG9nPZv1MiX4ee8Jj8qskwAnoFjuvWmaCecJe47Jeit"
 
     auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
     auth.set_access_token(access_token, access_token_secret)
@@ -36,9 +36,11 @@ def xingar():
         texto = f'vsf {pessoa[random_pessoa]}'.strip('\n')
         texto2 = f' sua {xingamento[random_xingamento]}'.strip('\n')
 
-    # print(texto + texto2 + " #BBB20\n")           # texto do post
+    tweet = texto + texto2 + " #BBB20"
 
-    api.update_status(texto + texto2 + ' #BBB20')   # post final
+    print(tweet)           # texto do post
+
+    api.update_status(tweet)   # post final
 
 while True:
     xingar()
