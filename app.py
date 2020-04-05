@@ -40,9 +40,10 @@ def xingar():
 
     print(tweet)           # texto do post
 
-    api.update_status(tweet)   # post final
+    # api.update_status(tweet)   # post final
 
 while True:
     xingar()
     
-    time.sleep(10800)
+    sleep_time = 3    # cooldown (em horas)
+    time.sleep(sleep_time * 3600)   # cooldown entre posts (em segundos)
