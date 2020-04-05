@@ -4,10 +4,10 @@ from random import randint
 import time
 
 def xingar():
-    consumer_key = "TLXPG47fXNoGCeErQc4dwpqiY"
-    consumer_secret = "GnGQzC62zmsh3vZPoEhyMWTe6LhCXVKRkPHPuITTyWFBR1WWJp"             # colocar os tokens etc
-    access_token = "1044965591562547200-131bSJ5ghM7TtGIWvo2Aw0xVduwLDA"
-    access_token_secret = "wqKG9nPZv1MiX4ee8Jj8qskwAnoFjuvWmaCecJe47Jeit"
+    consumer_key = ""
+    consumer_secret = ""             # colocar os tokens etc
+    access_token = ""
+    access_token_secret = ""
 
     auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
     auth.set_access_token(access_token, access_token_secret)
