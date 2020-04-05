@@ -39,8 +39,7 @@ def xingar():
     tweet = texto + texto2 + " #BBB20"
 
     print(tweet)           # texto do post
-
-    # api.update_status(tweet)   # post final
+    api.update_status(tweet)   # post final
 
 while True:
     xingar()
